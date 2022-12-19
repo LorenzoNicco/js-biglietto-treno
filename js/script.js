@@ -43,16 +43,43 @@ console.log (typeof over65Discount);
 console.log ('debug ok');
 
 //3 Prezzo finale
-let under18Ticket = (pricePerKm - under18Discount).toPrecision(2);
+let under18Ticket = (pricePerKm - under18Discount).toFixed(2);
 
-let over65Ticket = (pricePerKm - over65Discount).toPrecision(2);
+let over65Ticket = (pricePerKm - over65Discount).toFixed(2);
 
 if (age < 18) {
     alert(under18Ticket);
+
+    document.writeln (
+        `
+        Il prezzo del tuo biglietto è di ${under18Ticket}euro
+        `
+    );
+
+    console.log ('under18Ticket', under18Ticket, typeof under18Ticket);
+    console.log ('debug ok');
 }
 else if (age >= 65) {
     alert(over65Ticket);
+
+    document.writeln (
+        `
+        Il prezzo del tuo biglietto è di ${over65Ticket}euro
+        `
+    );
+
+    console.log ('over65Ticket', over65Ticket, typeof over65Ticket);
+    console.log ('debug ok');
 }
 else {
-    alert(pricePerKm.toPrecision(2));
+    alert(pricePerKm.toFixed(2));
+
+    document.writeln (
+        `
+        Il prezzo del tuo biglietto è di ${pricePerKm.toFixed(2)}euro
+        `
+    );
+
+    console.log ('pricePerKm.toFixed(2)', pricePerKm.toFixed(2), typeof pricePerKm.toFixed(2));
+    console.log ('debug ok');
 }
